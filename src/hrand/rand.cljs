@@ -1,6 +1,6 @@
-(ns hrand.core
-  (:gen-class)
-  (require '[clojure.string :as str]))
+(ns hrand.rand
+  (:require [clojure.string :as str]))
+
 
 (def d (take 10000 (repeatedly (partial rand-int 2))))
 
@@ -28,10 +28,3 @@
   (* 100
     (- 1
       (/ (Hsingle input) (Hmax 2)))))
-
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println (R d)))
-
-
